@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#090b10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="NutriLens">
+<meta name="description" content="NutriLens — умный дневник питания с фото еды и AI-оценкой калорий.">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon.svg">
+<title>NutriLens — питание с AI</title>
+<style>
+:root{color-scheme:dark;--bg:#090b10;--panel:rgba(255,255,255,.065);--panel2:rgba(255,255,255,.095);--line:rgba(255,255,255,.105);--text:#f7f8fc;--muted:#9299ab;--mint:#a8f5d0;--blue:#9db8ff;--pink:#f0b4ff;--orange:#ffc58d;--r:24px}
+*{box-sizing:border-box}html{background:var(--bg);scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 90% -10%,rgba(99,89,175,.20),transparent 38%),radial-gradient(ellipse at -10% 38%,rgba(36,136,116,.12),transparent 32%),var(--bg);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;color:var(--text);min-height:100dvh;padding:env(safe-area-inset-top) 0 calc(92px + env(safe-area-inset-bottom));letter-spacing:-.02em}button,input,select,textarea{font:inherit}button{color:inherit;cursor:pointer;border:0}.wrap{max-width:540px;margin:auto;padding:18px 17px 24px}.top{display:flex;align-items:center;justify-content:space-between;margin:6px 2px 23px}.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(145deg,#b7ffda,#85c8ff);color:#0b1716;font-size:23px;box-shadow:0 4px 30px #96f1cf20}.brandname{font-size:19px;font-weight:750;letter-spacing:-.7px}.eyebrow{font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}.avatar{height:40px;width:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;background:var(--panel);font-size:18px}.dateLine{display:flex;justify-content:space-between;align-items:end;margin-bottom:16px}.dateLine h1{font-size:29px;margin:5px 0 0;letter-spacing:-1.2px}.dateLine p{margin:0;color:var(--muted);font-size:13px}.dateChip{font-size:12px;color:#dbe3f6;padding:9px 11px;border-radius:14px;background:var(--panel);border:1px solid var(--line)}.glass{background:linear-gradient(145deg,rgba(255,255,255,.085),rgba(255,255,255,.035));border:1px solid var(--line);box-shadow:0 14px 36px rgba(0,0,0,.14),inset 0 1px 0 #ffffff08;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:var(--r)}.hero{padding:22px 20px 19px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;right:-65px;top:-95px;width:205px;height:205px;border-radius:50%;background:radial-gradient(circle,#9fffd01c,transparent 69%);pointer-events:none}.heroHead{display:flex;justify-content:space-between;align-items:center}.label{font-size:13px;color:#b9c0d0}.iconCircle{width:34px;height:34px;border-radius:13px;background:#ffffff0c;display:grid;place-items:center;border:1px solid var(--line)}.bigrow{display:flex;align-items:baseline;gap:8px;margin:11px 0 4px}.big{font-size:53px;letter-spacing:-3px;font-weight:760;line-height:1}.unit{font-size:15px;color:#a5acbd}.remain{font-size:13px;color:var(--mint);font-weight:600}.progress{height:8px;background:#ffffff12;border-radius:99px;margin:20px 0 19px;overflow:hidden}.progress>div{height:100%;width:0;background:linear-gradient(90deg,#93f4c5,#b2f5ee);border-radius:99px;transition:width .35s}.macrogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.macro{padding:13px 12px;border-radius:18px;background:#ffffff07;border:1px solid #ffffff0c}.macroTop{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:12px}.dot{width:7px;height:7px;border-radius:50%;background:var(--mint)}.macroNum{font-weight:700;font-size:19px;margin-top:10px;letter-spacing:-.5px}.macroNum small{font-size:11px;color:var(--muted);font-weight:500}.macro .mini{height:4px;background:#ffffff10;border-radius:8px;margin-top:10px;overflow:hidden}.macro .mini div{height:100%;background:var(--blue);width:0;border-radius:8px}.section{margin-top:24px}.sectionHead{display:flex;justify-content:space-between;align-items:center;margin:0 2px 13px}.sectionHead h2{font-size:19px;margin:0;letter-spacing:-.6px}.quiet{color:var(--muted);font-size:12px}.linkbtn{background:transparent;color:var(--mint);font-size:13px;padding:6px}.cameraCard{padding:17px;display:flex;gap:14px;align-items:center;position:relative;overflow:hidden}.cameraArt{width:70px;height:70px;border-radius:22px;flex:none;display:grid;place-items:center;background:linear-gradient(145deg,#243a38,#18252d);font-size:32px;border:1px solid #9af2d624}.cameraText{flex:1;min-width:0}.cameraText strong{font-size:15px}.cameraText p{font-size:12px;color:var(--muted);line-height:1.45;margin:6px 0 0}.roundArrow{font-size:21px;color:#b8f9d9}.cta{border-radius:15px;background:linear-gradient(110deg,#b4f8d5,#a9d9ff);color:#071511;font-weight:750;padding:14px 17px;font-size:14px;box-shadow:0 7px 22px #9df4d51c}.cta:active,.secondary:active,.navbtn:active{transform:scale(.98)}.cameraAction{width:100%;margin-top:13px}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.statCard{padding:16px}.statIcon{font-size:20px}.statTitle{font-size:12px;color:var(--muted);margin-top:12px}.statValue{font-size:23px;font-weight:720;letter-spacing:-.8px;margin-top:5px}.statValue small{font-size:12px;color:var(--muted);font-weight:500}.statHint{font-size:11px;color:var(--mint);margin-top:8px}.waterRow{display:flex;justify-content:space-between;align-items:center}.waterBtns{display:flex;gap:7px;margin-top:14px}.waterBtns button{flex:1;min-width:0;padding:10px 4px;border-radius:13px;background:#ffffff0a;border:1px solid var(--line);font-size:12px}.waterBtns button:first-child{background:#a8c8ff15;color:#b9d3ff}.mealList{display:grid;gap:10px}.meal{display:flex;align-items:center;gap:12px;padding:13px}.mealEmoji{height:48px;width:48px;display:grid;place-items:center;border-radius:16px;background:#ffffff0a;font-size:25px;flex:none}.mealInfo{flex:1;min-width:0}.mealInfo strong{font-size:14px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mealInfo p{font-size:11px;color:var(--muted);margin:5px 0 0}.mealKcal{text-align:right;font-weight:700;font-size:14px;white-space:nowrap}.mealKcal small{display:block;color:var(--muted);font-size:10px;font-weight:500;margin-top:4px}.remove{margin-left:7px;background:transparent;color:#8990a1;font-size:19px;padding:3px}.empty{text-align:center;padding:23px;color:var(--muted);font-size:13px}.tip{padding:17px;display:flex;gap:12px;align-items:flex-start}.tipIcon{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;background:#b7a0ff17;color:#d2c0ff;font-size:18px;flex:none}.tip p{font-size:12px;color:var(--muted);line-height:1.55;margin:5px 0 0}.tip strong{font-size:14px}.bottomnav{position:fixed;z-index:10;bottom:0;left:0;right:0;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(10,12,18,.84);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border-top:1px solid #ffffff10;display:flex;justify-content:center}.navInner{width:100%;max-width:540px;display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.navbtn{background:transparent;color:#7d8495;display:flex;flex-direction:column;align-items:center;gap:5px;padding:7px 3px 4px;font-size:10px;transition:.15s}.navbtn span{font-size:20px;line-height:1}.navbtn.active{color:var(--mint)}.navbtn.active span{filter:drop-shadow(0 0 8px #9cf2cf44)}.view{display:none}.view.active{display:block}.pageTitle{font-size:28px;margin:5px 0 8px;letter-spacing:-1px}.sub{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 20px}.field{display:grid;gap:7px;margin:14px 0}.field label{font-size:12px;color:#aab1c2}.field input,.field select,.field textarea{width:100%;min-height:45px;border:1px solid var(--line);border-radius:14px;background:#ffffff08;color:var(--text);padding:12px 13px;outline:none}.field textarea{resize:vertical;min-height:85px}.field input:focus,.field textarea:focus{border-color:#9df1cd77}.field select option{background:#171a23}.secondary{background:#ffffff0b;border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:13px}.actionrow{display:flex;gap:9px;flex-wrap:wrap}.actionrow>*{flex:1}.notice{padding:13px;border:1px solid #e5bd7d30;background:#dfac4e0c;color:#d7c8a8;border-radius:14px;font-size:12px;line-height:1.55;margin:14px 0}.success{color:var(--mint)}.foodPreview{width:100%;max-height:270px;object-fit:cover;border-radius:19px;border:1px solid var(--line);display:none;margin:12px 0}.resultCard{padding:17px;margin-top:13px}.resultKcal{font-size:38px;font-weight:780;letter-spacing:-1.6px}.resultKcal small{font-size:13px;color:var(--muted);font-weight:500;letter-spacing:0}.resultMacros{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.resultMacros div{background:#ffffff08;border-radius:12px;padding:10px}.resultMacros span{display:block;color:var(--muted);font-size:11px}.resultMacros b{display:block;margin-top:5px;font-size:15px}.foodname{font-size:16px;font-weight:700;margin-bottom:5px}.fine{font-size:11px;color:var(--muted);line-height:1.5}.logRow{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid #ffffff0e;font-size:13px}.logRow:last-child{border:0}.settingRow{padding:16px;display:flex;justify-content:space-between;gap:14px;align-items:center}.settingRow strong{font-size:14px}.settingRow p{margin:5px 0 0;color:var(--muted);font-size:11px;line-height:1.4}.divider{height:1px;background:var(--line);margin:3px 0}.toast{position:fixed;z-index:30;bottom:calc(98px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);padding:12px 16px;background:#e6f9ef;color:#10211a;border-radius:15px;font-size:13px;font-weight:650;box-shadow:0 8px 30px #0004;white-space:nowrap;display:none;max-width:90vw}.sheetBack{position:fixed;inset:0;background:#0008;z-index:20;display:none;align-items:flex-end;justify-content:center;padding:12px}.sheet{width:100%;max-width:520px;max-height:88dvh;overflow:auto;padding:21px;border:1px solid var(--line);border-radius:27px;background:#171a22;box-shadow:0 20px 70px #0009}.sheetHeader{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.sheetHeader h3{margin:0;font-size:20px}.close{background:#ffffff10;border-radius:50%;width:34px;height:34px;font-size:20px}.mutedBtn{color:var(--muted);background:transparent;padding:12px}.weeklyBars{display:flex;align-items:end;height:118px;gap:10px;padding:12px 4px 0}.barWrap{display:flex;flex-direction:column;align-items:center;justify-content:end;gap:8px;flex:1;height:100%}.bar{width:100%;max-width:28px;border-radius:8px 8px 3px 3px;background:linear-gradient(180deg,#a4f2d1,#729bc2);min-height:3px}.barLabel{font-size:10px;color:var(--muted)}@media(min-width:600px){.wrap{padding-top:30px}.bottomnav{border-left:1px solid var(--line);border-right:1px solid var(--line);max-width:540px;margin:auto;border-radius:22px 22px 0 0}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand"><div class="logo">✳</div><div><div class="brandname">NutriLens</div><div class="eyebrow">SMART NUTRITION</div></div></div><button class="avatar" onclick="navigate('settings')" aria-label="Настройки">⚙</button></header>
+<main>
+<section id="home" class="view active">
+<div class="dateLine"><div><p id="greeting">ТВОЙ ДЕНЬ</p><h1>Питание <span style="color:var(--mint)">с умом.</span></h1></div><div class="dateChip" id="todayChip">Сегодня</div></div>
+<div class="glass hero">
+<div class="heroHead"><span class="label">Съедено сегодня</span><span class="iconCircle">◉</span></div>
+<div class="bigrow"><span class="big" id="totalKcal">0</span><span class="unit">ккал</span></div>
+<div class="remain" id="remaining">Осталось 2 000 ккал</div>
+<div class="progress"><div id="kcalBar"></div></div>
+<div class="macrogrid">
+<div class="macro"><div class="macroTop"><i class="dot" style="background:#a8f5d0"></i>Белки</div><div class="macroNum" id="pNum">0 <small>/ 130 г</small></div><div class="mini"><div id="pBar" style="background:#a8f5d0"></div></div></div>
+<div class="macro"><div class="macroTop"><i class="dot" style="background:#9db8ff"></i>Жиры</div><div class="macroNum" id="fNum">0 <small>/ 65 г</small></div><div class="mini"><div id="fBar" style="background:#9db8ff"></div></div></div>
+<div class="macro"><div class="macroTop"><i class="dot" style="background:#f0b4ff"></i>Углеводы</div><div class="macroNum" id="cNum">0 <small>/ 230 г</small></div><div class="mini"><div id="cBar" style="background:#f0b4ff"></div></div></div>
+</div>
+</div>
+<div class="section"><div class="sectionHead"><h2>Добавить еду</h2><span class="quiet">Быстро и просто</span></div>
+<div class="glass cameraCard"><div class="cameraArt">📸</div><div class="cameraText"><strong>Что у тебя на тарелке?</strong><p>Сфотографируй блюдо — AI оценит калории и БЖУ.</p></div><div class="roundArrow">↗</div></div>
+<button class="cta cameraAction" onclick="openCamera()">＋ Сканировать блюдо</button>
+</div>
+<div class="section"><div class="sectionHead"><h2>Сегодня в цифрах</h2><button class="linkbtn" onclick="navigate('stats')">Статистика ↗</button></div>
+<div class="two">
+<div class="glass statCard"><div class="statIcon">💧</div><div class="statTitle">Вода</div><div class="statValue" id="waterNum">0 <small>/ 2 л</small></div><div class="waterBtns"><button onclick="addWater(250)">+250 мл</button><button onclick="addWater(500)">+500 мл</button></div></div>
+<div class="glass statCard"><div class="statIcon">🔥</div><div class="statTitle">Цель калорий</div><div class="statValue" id="goalNum">2 000 <small>ккал</small></div><div class="statHint">Настрой под себя ↗</div><button class="secondary" style="margin-top:12px;width:100%" onclick="navigate('settings')">Изменить цель</button></div>
+</div></div>
+<div class="section"><div class="sectionHead"><h2>Дневник питания</h2><span class="quiet" id="mealCount">0 приёмов</span></div><div class="mealList" id="mealList"><div class="glass empty">Пока пусто. Добавь свой первый приём пищи 🍓</div></div></div>
+<div class="section"><div class="glass tip"><div class="tipIcon">✧</div><div><strong>Маленький совет на сегодня</strong><p id="tipText">Добавляй в каждый основной приём пищи источник белка — так проще поддерживать сытость и восстанавливаться после тренировок.</p></div></div></div>
+</section>
+<section id="scan" class="view">
+<h1 class="pageTitle">AI-сканер еды</h1><p class="sub">Наведи камеру на блюдо или выбери фото из галереи. AI определит продукты и приблизительную пищевую ценность.</p>
+<div class="glass" style="padding:17px">
+<button class="cta" style="width:100%" onclick="document.getElementById('cameraInput').click()">📷 Открыть камеру</button>
+<button class="secondary" style="width:100%;margin-top:9px" onclick="document.getElementById('fileInput').click()">Выбрать фото из галереи</button>
+<input id="cameraInput" type="file" accept="image/*" capture="environment" hidden onchange="handlePhoto(this)">
+<input id="fileInput" type="file" accept="image/*" hidden onchange="handlePhoto(this)">
+<img id="foodPreview" class="foodPreview" alt="Фото еды">
+<div class="field"><label for="foodDescription">Что на фото? (необязательно)</label><textarea id="foodDescription" placeholder="Например: куриная грудка, рис и овощи. Порция примерно 300 г."></textarea></div>
+<div class="notice">AI оценивает состав и размер порции приблизительно. Для более точного результата укажи вес ингредиентов или уточни их после распознавания.</div>
+<button id="analyzeBtn" class="cta" style="width:100%" onclick="analyzeFood()">✧ Оценить калории с AI</button>
+<div id="scanStatus" class="fine" style="margin-top:12px"></div>
+</div>
+<div id="scanResult"></div>
+<div class="section"><div class="sectionHead"><h2>Без фото</h2><span class="quiet">Добавить вручную</span></div><div class="glass" style="padding:17px">
+<div class="field"><label>Название блюда</label><input id="manualName" placeholder="Например, овсянка с бананом"></div>
+<div class="two"><div class="field"><label>Калории, ккал</label><input id="manualKcal" type="number" min="0" placeholder="350"></div><div class="field"><label>Вес порции, г</label><input id="manualWeight" type="number" min="0" placeholder="250"></div></div>
+<div class="two"><div class="field"><label>Белки, г</label><input id="manualP" type="number" min="0" placeholder="15"></div><div class="field"><label>Жиры, г</label><input id="manualF" type="number" min="0" placeholder="10"></div></div>
+<div class="field"><label>Углеводы, г</label><input id="manualC" type="number" min="0" placeholder="50"></div>
+<button class="cta" style="width:100%" onclick="addManual()">Добавить в дневник</button>
+</div></div>
+</section>
+<section id="stats" class="view">
+<h1 class="pageTitle">Твоя динамика</h1><p class="sub">Отслеживай привычки и смотри, как меняется питание со временем.</p>
+<div class="glass" style="padding:19px"><div class="sectionHead" style="margin:0"><h2>Калории за 7 дней</h2><span class="quiet">ккал</span></div><div class="weeklyBars" id="weeklyBars"></div><div class="divider" style="margin-top:17px"></div><div class="logRow"><span>Среднее за 7 дней</span><b id="weeklyAvg">0 ккал</b></div><div class="logRow"><span>Дней с записями</span><b id="activeDays">0</b></div><div class="logRow"><span>Всего блюд за неделю</span><b id="weeklyMeals">0</b></div></div>
+<div class="section"><div class="sectionHead"><h2>История питания</h2><span class="quiet">по дням</span></div><div class="glass" id="historyList" style="padding:16px"><div class="empty">Записей пока нет.</div></div></div>
+<div class="notice">Значения на этой странице основаны на твоих записях. Это инструмент самоконтроля, а не медицинская рекомендация.</div>
+</section>
+<section id="settings" class="view">
+<h1 class="pageTitle">Настройки</h1><p class="sub">Настрой дневную цель, AI-распознавание и хранение данных.</p>
+<div class="glass" style="padding:17px">
+<div class="field"><label>Дневная цель, ккал</label><input id="setGoal" type="number" min="500" max="10000" value="2000"></div>
+<div class="two"><div class="field"><label>Белки, г</label><input id="setP" type="number" min="0" value="130"></div><div class="field"><label>Жиры, г</label><input id="setF" type="number" min="0" value="65"></div></div>
+<div class="field"><label>Углеводы, г</label><input id="setC" type="number" min="0" value="230"></div>
+<div class="field"><label>Цель воды, мл</label><input id="setWater" type="number" min="250" max="10000" step="250" value="2000"></div>
+<button class="cta" style="width:100%" onclick="saveSettings()">Сохранить цели</button>
+</div>
+<div class="section"><div class="glass" style="padding:17px">
+<div class="sectionHead"><h2>AI-распознавание</h2><span class="quiet">API</span></div>
+<p class="sub" style="margin-bottom:12px">Чтобы включить настоящую AI-оценку по фото, разверни серверную функцию и храни ключ провайдера в GitHub Secrets. Не вставляй секретный ключ в HTML.</p>
+<div class="field"><label>URL AI endpoint</label><input id="aiEndpoint" placeholder="https://твой-домен.example/api/analyze"></div>
+<button class="secondary" style="width:100%" onclick="saveEndpoint()">Сохранить адрес AI endpoint</button>
+<div class="notice">Если endpoint не настроен, приложение предложит ориентировочную оценку по описанию и локальному справочнику. Она не является распознаванием изображения ИИ.</div>
+</div></div>
+<div class="section"><div class="glass">
+<div class="settingRow"><div><strong>Экспорт дневника</strong><p>Скачать все записи в формате JSON</p></div><button class="secondary" onclick="exportData()">Экспорт</button></div><div class="divider"></div>
+<div class="settingRow"><div><strong>Установить приложение</strong><p>Добавь NutriLens на экран «Домой» в Safari</p></div><button class="secondary" onclick="installHelp()">Как?</button></div><div class="divider"></div>
+<div class="settingRow"><div><strong>Удалить все данные</strong><p>Очистить дневник на этом устройстве</p></div><button class="secondary" style="color:#ffaaa9" onclick="clearData()">Очистить</button></div>
+</div></div>
+<div class="fine" style="text-align:center;margin:22px 0">NutriLens · PWA · Версия 1.0<br>Данные хранятся локально в браузере, пока ты не включишь внешний AI endpoint.</div>
+</section>
+</main>
+</div>
+<nav class="bottomnav"><div class="navInner">
+<button class="navbtn active" data-view="home" onclick="navigate('home')"><span>⌂</span>Главная</button>
+<button class="navbtn" data-view="scan" onclick="navigate('scan')"><span>◎</span>Сканер</button>
+<button class="navbtn" data-view="stats" onclick="navigate('stats')"><span>▥</span>Статистика</button>
+<button class="navbtn" data-view="settings" onclick="navigate('settings')"><span>⚙</span>Настройки</button>
+</div></nav>
+<div class="toast" id="toast"></div>
+<div class="sheetBack" id="editSheet" onclick="if(event.target===this)closeSheet()"><div class="sheet"><div class="sheetHeader"><h3>Уточнить блюдо</h3><button class="close" onclick="closeSheet()">×</button></div><p class="sub">Проверь оценку AI и поправь значения перед добавлением.</p><div class="field"><label>Название</label><input id="editName"></div><div class="two"><div class="field"><label>Калории</label><input id="editKcal" type="number" min="0"></div><div class="field"><label>Вес, г</label><input id="editWeight" type="number" min="0"></div></div><div class="two"><div class="field"><label>Белки, г</label><input id="editP" type="number" min="0" step=".1"></div><div class="field"><label>Жиры, г</label><input id="editF" type="number" min="0" step=".1"></div></div><div class="field"><label>Углеводы, г</label><input id="editC" type="number" min="0" step=".1"></div><div class="field"><label>Приём пищи</label><select id="editMeal"><option value="Завтрак">Завтрак</option><option value="Обед">Обед</option><option value="Ужин">Ужин</option><option value="Перекус">Перекус</option></select></div><div class="actionrow"><button class="secondary" onclick="closeSheet()">Отмена</button><button class="cta" onclick="confirmAdd()">Добавить</button></div></div></div>
+<script>
+const $=id=>document.getElementById(id);
+const today=()=>new Date().toLocaleDateString('en-CA');
+const key='nutrilens-v1';
+const defaultState={entries:[],water:{},goals:{kcal:2000,p:130,f:65,c:230,water:2000},endpoint:''};
+let state=loadState(),photoData='',pendingFood=null,toastTimer;
+function loadState(){try{return Object.assign({},defaultState,JSON.parse(localStorage.getItem(key)||'{}'))}catch(e){return {...defaultState}}}
+function persist(){try{localStorage.setItem(key,JSON.stringify(state))}catch(e){showToast('Не удалось сохранить: память устройства заполнена')}}
+function showToast(s){const t=$('toast');t.textContent=s;t.style.display='block';clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.style.display='none',2600)}
+function fmt(n){return Math.round(Number(n)||0).toLocaleString('ru-RU')}
+function round(n){return Math.round((Number(n)||0)*10)/10}
+function todayEntries(){return state.entries.filter(e=>e.date===today())}
+function totals(entries){return entries.reduce((a,e)=>({kcal:a.kcal+(+e.kcal||0),p:a.p+(+e.p||0),f:a.f+(+e.f||0),c:a.c+(+e.c||0)}),{kcal:0,p:0,f:0,c:0})}
+function navigate(id){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===id));document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.view===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='stats')renderStats();if(id==='settings')fillSettings()}
+function render(){
+const es=todayEntries(),t=totals(es),g=state.goals; $('todayChip').textContent=new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'short'});$('greeting').textContent=new Date().getHours()<12?'ДОБРОЕ УТРО':new Date().getHours()<18?'ХОРОШЕГО ДНЯ':'ХОРОШЕГО ВЕЧЕРА';
+$('totalKcal').textContent=fmt(t.kcal);$('remaining').textContent=t.kcal>g.kcal?'Превышение цели на '+fmt(t.kcal-g.kcal)+' ккал':'Осталось '+fmt(g.kcal-t.kcal)+' ккал';$('kcalBar').style.width=Math.min(100,t.kcal/Math.max(1,g.kcal)*100)+'%';
+[['p',t.p,g.p],['f',t.f,g.f],['c',t.c,g.c]].forEach(([k,v,goal])=>{$(k+'Num').innerHTML=round(v)+' <small>/ '+fmt(goal)+' г</small>';$ (k+'Bar').style.width=Math.min(100,v/Math.max(1,goal)*100)+'%'});
+$('goalNum').innerHTML=fmt(g.kcal)+' <small>ккал</small>';const water=state.water[today()]||0;$('waterNum').innerHTML=(water/1000).toLocaleString('ru-RU',{maximumFractionDigits:2})+' <small>/ '+(g.water/1000).toLocaleString('ru-RU')+' л</small>';
+$('mealCount').textContent=es.length+' '+plural(es.length,['приём','приёма','приёмов']);
+$('mealList').innerHTML=es.length?es.slice().reverse().map(e=>'<div class="glass meal"><div class="mealEmoji">'+esc(e.emoji||'🍽️')+'</div><div class="mealInfo"><strong>'+esc(e.name)+'</strong><p>'+esc(e.meal||'Приём пищи')+' · '+fmt(e.weight||0)+' г · Б '+round(e.p)+' / Ж '+round(e.f)+' / У '+round(e.c)+'</p></div><div class="mealKcal">'+fmt(e.kcal)+'<small>ккал</small></div><button class="remove" title="Удалить" onclick="removeEntry(\''+e.id+'\')">×</button></div>').join(''):'<div class="glass empty">Пока пусто. Добавь свой первый приём пищи 🍓</div>';
+}
+function plural(n,a){n=Math.abs(n)%100;let n1=n%10;if(n>10&&n<20)return a[2];if(n1>1&&n1<5)return a[1];if(n1===1)return a[0];return a[2]}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function addWater(n){state.water[today()]=(state.water[today()]||0)+n;persist();render();showToast('Вода добавлена 💧')}
+function removeEntry(id){state.entries=state.entries.filter(e=>e.id!==id);persist();render();showToast('Запись удалена')}
+function openCamera(){navigate('scan');setTimeout(()=>$('cameraInput').click(),250)}
+function handlePhoto(input){const f=input.files&&input.files[0];if(!f)return;if(!f.type.startsWith('image/')){showToast('Выбери изображение');return}if(f.size>12*1024*1024){showToast('Фото слишком большое. Максимум 12 МБ');input.value='';return}const reader=new FileReader();reader.onload=()=>{photoData=reader.result;$('foodPreview').src=photoData;$('foodPreview').style.display='block';$('scanStatus').textContent='Фото готово к анализу.'};reader.onerror=()=>showToast('Не удалось прочитать фото');reader.readAsDataURL(f)}
+async function analyzeFood(){
+const description=$('foodDescription').value.trim();if(!photoData&&!description){showToast('Сначала сфотографируй еду или опиши её');return}
+const btn=$('analyzeBtn');btn.disabled=true;btn.textContent='Анализирую…';$('scanStatus').textContent='Подготавливаю оценку…';$('scanResult').innerHTML='';
+try{
+let result;
+if(state.endpoint){const res=await fetch(state.endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({image:photoData||null,description,locale:'ru',task:'estimate_food_nutrition'})});if(!res.ok)throw new Error('AI endpoint ответил '+res.status);const payload=await res.json();result=normalizeAi(payload)}
+else {result=estimateLocal(description);result.disclaimer='Ориентировочная оценка по описанию и локальному справочнику; фото не распознавалось ИИ. Настрой AI endpoint для анализа изображения.'}
+pendingFood=result;renderScanResult(result);$('scanStatus').textContent=state.endpoint?'AI-оценка готова. Проверь порцию перед сохранением.':'Подготовлена приблизительная оценка. Для настоящего AI по фото укажи endpoint в настройках.';showToast('Оценка готова — проверь значения')
+}catch(e){$('scanStatus').textContent='Не удалось получить оценку: '+e.message;$('scanResult').innerHTML='<div class="notice">Проверь URL endpoint и доступность сервера. Для запросов с другого домена сервер должен разрешать CORS. Фото не было добавлено в дневник.</div>'}
+finally{btn.disabled=false;btn.textContent='✧ Оценить калории с AI'}
+}
+function normalizeAi(x){
+const d=x.food||x.result||x;const n=(...keys)=>{for(const k of keys){if(d[k]!==undefined)return Number(d[k])||0}return 0};
+if(!d.name&&!d.food_name&&!d.label)throw new Error('В ответе AI нет названия блюда');
+return {name:String(d.name||d.food_name||d.label),kcal:n('kcal','calories','calories_kcal'),p:n('p','protein','protein_g'),f:n('f','fat','fat_g'),c:n('c','carbs','carbohydrates','carbs_g'),weight:n('weight','weight_g','portion_g')||250,emoji:d.emoji||'🍽️',confidence:d.confidence||null,notes:d.notes||d.explanation||'',disclaimer:'AI-оценка приблизительна. Проверь размер порции и ингредиенты.'}
+}
+const foods=[
+{keys:['овсян','oatmeal','porridge'],name:'Овсяная каша',kcal:150,p:5,f:3,c:27,weight:250,emoji:'🥣'},
+{keys:['куриц','chicken'],name:'Куриная грудка с гарниром',kcal:420,p:42,f:10,c:40,weight:300,emoji:'🍗'},
+{keys:['рис','rice'],name:'Рис варёный',kcal:260,p:5,f:1,c:57,weight:200,emoji:'🍚'},
+{keys:['салат','salad'],name:'Овощной салат',kcal:180,p:4,f:12,c:14,weight:220,emoji:'🥗'},
+{keys:['пицц','pizza'],name:'Пицца',kcal:285,p:12,f:10,c:36,weight:100,emoji:'🍕'},
+{keys:['бургер','burger'],name:'Бургер',kcal:550,p:28,f:28,c:45,weight:250,emoji:'🍔'},
+{keys:['яйц','egg','омлет'],name:'Яйца / омлет',kcal:220,p:14,f:16,c:3,weight:180,emoji:'🍳'},
+{keys:['банан','banana'],name:'Банан',kcal:105,p:1.3,f:.4,c:27,weight:120,emoji:'🍌'},
+{keys:['йогурт','yogurt'],name:'Йогурт натуральный',kcal:140,p:9,f:5,c:14,weight:200,emoji:'🥛'},
+{keys:['паст','макарон','pasta'],name:'Паста с соусом',kcal:430,p:15,f:12,c:65,weight:300,emoji:'🍝'},
+{keys:['лосос','salmon','рыб'],name:'Рыба с гарниром',kcal:390,p:32,f:18,c:25,weight:280,emoji:'🐟'},
+{keys:['картоф','potato'],name:'Картофель',kcal:210,p:4,f:7,c:35,weight:250,emoji:'🥔'},
+{keys:['сэндвич','sandwich','бутерброд'],name:'Сэндвич',kcal:340,p:17,f:13,c:39,weight:180,emoji:'🥪'},
+{keys:['суши','sushi','ролл'],name:'Суши / роллы',kcal:330,p:13,f:6,c:55,weight:250,emoji:'🍣'},
+{keys:['творог','cottage cheese'],name:'Творог',kcal:180,p:28,f:7,c:4,weight:200,emoji:'🥣'}
+];
+function estimateLocal(description){
+const s=description.toLowerCase();const food=foods.find(f=>f.keys.some(k=>s.includes(k)));if(!food)return {name:description?description.slice(0,80):'Блюдо по фото',kcal:350,p:20,f:12,c:40,weight:250,emoji:'🍽️',notes:'Выбрана общая оценка стандартной порции; состав блюда не удалось подтвердить.',disclaimer:'Это приблизительная заглушка без анализа фото. Укажи состав и вес или настрой AI endpoint.'};
+const weightMatch=s.match(/(\d{2,4})\s*(г|гр|грамм)/);const weight=weightMatch?Number(weightMatch[1]):food.weight;const mult=weight/food.weight;
+return {...food,kcal:Math.round(food.kcal*mult),p:round(food.p*mult),f:round(food.f*mult),c:round(food.c*mult),weight,notes:'Оценка основана на типичной порции. Масло, соусы и дополнительные ингредиенты могут сильно менять калорийность.'}
+}
+function renderScanResult(f){
+$('scanResult').innerHTML='<div class="glass resultCard"><div class="foodname">'+esc(f.emoji||'🍽️')+' '+esc(f.name)+'</div><div class="resultKcal">'+fmt(f.kcal)+' <small>ккал</small></div><div class="resultMacros"><div><span>Белки</span><b>'+round(f.p)+' г</b></div><div><span>Жиры</span><b>'+round(f.f)+' г</b></div><div><span>Углеводы</span><b>'+round(f.c)+' г</b></div></div><p class="fine">'+esc(f.notes||'')+'</p><p class="fine">'+esc(f.disclaimer||'Оценка приблизительна; проверь порцию.')+'</p><button class="cta" style="width:100%;margin-top:8px" onclick="openEdit()">Проверить и добавить в дневник</button></div>'
+}
+function openEdit(){if(!pendingFood)return;const f=pendingFood;$('editName').value=f.name;$('editKcal').value=f.kcal;$('editWeight').value=f.weight||250;$('editP').value=f.p;$('editF').value=f.f;$('editC').value=f.c;const h=new Date().getHours();$('editMeal').value=h<11?'Завтрак':h<16?'Обед':h<21?'Ужин':'Перекус';$('editSheet').style.display='flex'}
+function closeSheet(){$('editSheet').style.display='none'}
+function confirmAdd(){const name=$('editName').value.trim();if(!name){showToast('Введи название блюда');return}const values=['editKcal','editWeight','editP','editF','editC'].map(id=>Number($(id).value));if(values.some(v=>!Number.isFinite(v)||v<0)){showToast('Проверь числовые значения');return}state.entries.push({id:crypto.randomUUID?crypto.randomUUID():String(Date.now()),date:today(),name,emoji:pendingFood?.emoji||'🍽️',kcal:values[0],weight:values[1],p:values[2],f:values[3],c:values[4],meal:$('editMeal').value,source:state.endpoint?'ai':'estimate',time:new Date().toISOString()});persist();closeSheet();render();navigate('home');showToast('Добавлено в дневник ✓');$('scanResult').innerHTML='';$('foodDescription').value='';photoData='';$('foodPreview').style.display='none';$('cameraInput').value='';$('fileInput').value='';pendingFood=null}
+function addManual(){const name=$('manualName').value.trim();const kcal=Number($('manualKcal').value);if(!name||$('manualKcal').value===''||!Number.isFinite(kcal)||kcal<0){showToast('Укажи название и калории');return}const n=id=>Math.max(0,Number($(id).value)||0);pendingFood={name,kcal,weight:n('manualWeight')||0,p:n('manualP'),f:n('manualF'),c:n('manualC'),emoji:'🍽️',notes:'Добавлено вручную.'};openEdit()}
+function fillSettings(){const g=state.goals;$('setGoal').value=g.kcal;$('setP').value=g.p;$('setF').value=g.f;$('setC').value=g.c;$('setWater').value=g.water;$('aiEndpoint').value=state.endpoint||''}
+function saveSettings(){const vals={kcal:Number($('setGoal').value),p:Number($('setP').value),f:Number($('setF').value),c:Number($('setC').value),water:Number($('setWater').value)};if(Object.values(vals).some(v=>!Number.isFinite(v)||v<=0)){showToast('Введи цели больше нуля');return}if(vals.kcal<500||vals.kcal>10000||vals.water<250||vals.water>10000){showToast('Калории: 500–10000, вода: 250–10000 мл');return}state.goals=vals;persist();render();showToast('Цели сохранены ✓')}
+function saveEndpoint(){const v=$('aiEndpoint').value.trim();if(v){try{const u=new URL(v);if(!['http:','https:'].includes(u.protocol))throw new Error()}catch(e){showToast('Укажи корректный URL endpoint');return}}state.endpoint=v;persist();showToast(v?'AI endpoint сохранён':'AI endpoint отключён')}
+function renderStats(){const dayNames=['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];const days=[];for(let i=6;i>=0;i--){const d=new Date();d.setDate(d.getDate()-i);const date=d.toLocaleDateString('en-CA');const entries=state.entries.filter(e=>e.date===date);days.push({date,label:dayNames[d.getDay()],t:totals(entries),count:entries.length})}const max=Math.max(state.goals.kcal,...days.map(d=>d.t.kcal),1);$('weeklyBars').innerHTML=days.map(d=>'<div class="barWrap" title="'+esc(d.date)+': '+fmt(d.t.kcal)+' ккал"><div class="bar" style="height:'+Math.max(3,d.t.kcal/max*85)+'%"></div><span class="barLabel">'+d.label+'</span></div>').join('');const active=days.filter(d=>d.count>0);$('weeklyAvg').textContent=fmt(active.length?active.reduce((a,d)=>a+d.t.kcal,0)/active.length:0)+' ккал';$('activeDays').textContent=active.length;$('weeklyMeals').textContent=active.reduce((a,d)=>a+d.count,0);
+const groups={};state.entries.slice().sort((a,b)=>b.date.localeCompare(a.date)).forEach(e=>(groups[e.date]??=[]).push(e));const keys=Object.keys(groups).slice(0,14);$('historyList').innerHTML=keys.length?keys.map(d=>{const t=totals(groups[d]);return '<div class="logRow"><span>'+esc(new Date(d+'T12:00:00').toLocaleDateString('ru-RU',{weekday:'short',day:'numeric',month:'short'}))+' <small style="color:var(--muted)">· '+groups[d].length+' блюд</small></span><b>'+fmt(t.kcal)+' ккал</b></div>'}).join(''):'<div class="empty">Записей пока нет.</div>'}
+function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='nutrilens-'+today()+'.json';a.click();URL.revokeObjectURL(url);showToast('Экспорт подготовлен')}
+function clearData(){if(!confirm('Удалить дневник, воду и настройки на этом устройстве? Это действие нельзя отменить.'))return;localStorage.removeItem(key);state=loadState();render();fillSettings();showToast('Локальные данные очищены')}
+function installHelp(){alert('На iPhone открой эту страницу в Safari → нажми «Поделиться» → «На экран Домой» → «Добавить». Для полноценного офлайн-режима нужны опубликованные manifest и service worker.')}
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(()=>{});
+render();fillSettings();
+</script>
+</body>
+</html>
