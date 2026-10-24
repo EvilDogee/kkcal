@@ -1,0 +1,40 @@
+name: Build iOS app
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate Xcode project
+        working-directory: CalorieLens
+        run: xcodegen generate
+
+      - name: Build for iOS Simulator
+        working-directory: CalorieLens
+        run: |
+          xcodebuild \
+            -project CalorieLens.xcodeproj \
+            -scheme CalorieLens \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Upload simulator app
+        uses: actions/upload-artifact@v4
+        with:
+          name: CalorieLens-iOS-Simulator
+          path: CalorieLens/build/DerivedData/Build/Products/Debug-iphonesimulator/CalorieLens.app
+          if-no-files-found: error
